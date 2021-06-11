@@ -1,0 +1,143 @@
+{ 
+  "products" : [   
+    {
+      "id": 1,
+      "brandName": "Nike 1",
+      "model": "Air Force 1",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "12/03/2020"
+    },
+   
+    {
+      "id": 2,
+      "brandName": "Nike 2",
+      "model": "Air Force 2",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "12/05/2020"
+    },
+   
+    {
+      "id": 3,
+      "brandName": "Nike 3",
+      "model": "Air Force 3",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "11/03/2020"
+    },
+   
+    {
+      "id": 4,
+      "brandName": "Nike 4",
+      "model": "Air Force 4",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "12/03/1990"
+    },
+    {
+      "id": 5,
+      "brandName": "Nike 5",
+      "model": "Air Force 5",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "14/06/2020"
+    },
+    {
+      "id": 6,
+      "brandName": "Nike 6",
+      "model": "Air Force 6",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "12/03/2000"
+    },
+    {
+      "id": 7,
+      "brandName": "Nike 7",
+      "model": "Air Force 7",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "12/03/2020"
+    },
+    {
+      "id": 8,
+      "brandName": "Nike 8",
+      "model": "Air Force 8",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "12/03/2020"
+    },
+    {
+      "id": 9,
+      "brandName": "Nike 9",
+      "model": "Air Force 9",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "12/03/2021"
+    },
+    {
+      "id": 10,
+      "brandName": "Nike 10",
+      "model": "Air Force 10",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "12/03/2020"
+    },
+    {
+      "id": 11,
+      "brandName": "Nike 11",
+      "model": "Air Force 11",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "12/03/2020"
+    },
+    {
+      "id": 12,
+      "brandName": "Nike 12",
+      "model": "Air Force 12",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "12/03/2023"
+    },
+    {
+      "id": 13,
+      "brandName": "Nike 13",
+      "model": "Air Force 13",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 100,
+      "countInStock": 12,
+      "releaseDate": "12/03/2020"
+    },
+    {
+      "id": 14,
+      "brandName": "Nike 14",
+      "model": "Air Force 14",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 300,
+      "countInStock": 12,
+      "releaseDate": "12/11/2020"
+    },
+    {
+      "id": 15,
+      "brandName": "Nike 15",
+      "model": "Air Force 15",
+      "availableSizes": [32, 40, 70, 2],
+      "price": 400,
+      "countInStock": 12,
+      "releaseDate": "01/01/2022"
+    }
+  ]
+}
+

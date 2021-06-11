@@ -1,0 +1,120 @@
+
+.App {
+  text-align: center;
+}
+
+/** Spinner Loader Style **/
+
+.loader {
+  text-align: center;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.404);
+  z-index: 2;
+  cursor: pointer;
+} 
+
+/** Putting space btn rows **/
+.gutter .row {
+		margin-top: -30px;
+}
+
+.gutter .row 	> [class*="col-"] {
+  padding-top: 30px;
+}
+
+
+/** Product Styles **/
+.product-container {
+  border: 2px solid gray;
+  border-radius: 15px;
+}
+
+.product-container .img-container {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-top-left-radius: 15px; */
+ 
+}
+
+.img-container img {  
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  object-position: center;
+  height: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+
+.add-to-cart-btn {
+  background: rgba(0, 0, 0, 0.719);
+  border-radius: 15px;
+  text-align: center;
+  border: none;
+  width: 50%;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+
+} 
+
+.add-to-cart-btn:hover {
+  transition: 0.5s;
+  background: white;
+  border: 2px solid black;
+  color: black;
+}
+
+.product-details {
+  padding: 20px 0;
+}
+
+
+.title-spacing {
+  margin: 50px 0;
+}
+
+
+/** Navbar design **/
+
+.main-nav {
+  box-shadow: 0 2px 5px rgb(0 0 0 / 29%);
+  position: sticky;
+  top: 0;
+}
+.main-nav .logo {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.search-container {
+  position: relative;
+  width: 350px;
+  height: 32px;
+  margin-right: 15px;
+}
+
+.frjscc {
+  min-height: 32px !important;
+  font-size: 14px;
+}
+
+.frjscc > input {
+  padding-left: 15px;
+}
