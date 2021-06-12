@@ -18,13 +18,11 @@ export const SingleProductView = (props) => {
         }
     }, [dispatch, prodRedirectId]);
 
-    console.log('izo', products);
-
     return (
         <>
             <h2 className="title-spacing">Your Sneaker</h2>
             <Container>
-                <Product product={products.length > 0 && products[0]} />   
+                <Product product={products.length > 0 && products[0]} isSpecificProd={true} />   
             </Container>
 
         </>

@@ -11,7 +11,8 @@ app.use(cors());
 app.use("/api", router);
 
 app.use('*', function (req, res) {
-    res.redirect('api/products');
+    // res.redirect('api/products');
+    res.status(200).send('Welcome to Sneaker City Shop')
 });
 
 app.listen(serverPort);

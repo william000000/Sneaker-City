@@ -64,7 +64,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
-      "releaseDate": "12/03/2020"
+      "releaseDate": "12/04/2020"
     },
     {
       "id": 8,
@@ -73,7 +73,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
-      "releaseDate": "12/03/2020"
+      "releaseDate": "10/03/2020"
     },
     {
       "id": 9,
@@ -91,7 +91,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
-      "releaseDate": "12/03/2020"
+      "releaseDate": "01/03/2020"
     },
     {
       "id": 11,
@@ -100,7 +100,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
-      "releaseDate": "12/03/2020"
+      "releaseDate": "12/04/2020"
     },
     {
       "id": 12,

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { productListAction } from '../redux/actions/productAction';
-import { Row, Col, Container } from 'react-bootstrap';
+import { productListAction, sortProductsAction } from '../redux/actions/productAction';
+import { Row, Col, Container, Form } from 'react-bootstrap';
 import { Product } from '../components/Product';
 import Spinner from '../components/Spinner';
 import Pagination from "react-js-pagination";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSort } from '@fortawesome/free-solid-svg-icons';
 
 export const ProductView = () => {
 
@@ -29,6 +30,10 @@ export const ProductView = () => {
         setCurrentPage(pageNumber)
     };
 
+    const handleSort = (orderBy) => {
+        dispatch(sortProductsAction(orderBy))
+    };
+
     useEffect(() => {
         dispatch(productListAction());
     }, [dispatch]);
@@ -36,6 +41,19 @@ export const ProductView = () => {
     return loading ? <Spinner /> :
         <>
             <h2 className="title-spacing">Welcome to Best Sneaker Shop</h2>
+            {/* <FontAwesomeIcon icon={faSort} className="border-2" > */}
+                <Form.Control
+                    as="select"
+                    className="my-1 mr-sm-2"
+                    custom
+                    onChange={(e) => handleSort(e.target.value)}
+                    >
+                    <option>Sort By</option>
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                    
+                </Form.Control>
+            {/* </FontAwesomeIcon> */}
             <Container>
                 <Row className="gutter">
                     {currentProducts.map(product => (

@@ -14,7 +14,8 @@ const productListAction = (id) => async (dispatch) => {
     try {
         spinnerStatusAction(true);
         dispatch({ type: PRODUCT_LIST_REQUEST });
-        const { data } = await axios.get(`${BaseUrl}/api/products?id=${id}`);
+        const apiRoute = id ? await axios.get(`${BaseUrl}/api/products?id=${id}`) : await axios.get(`${BaseUrl}/api/products`);
+        const { data } = apiRoute;
         dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
         spinnerStatusAction(false);
 
@@ -27,4 +28,21 @@ const productListAction = (id) => async (dispatch) => {
 
 }
 
-export { productListAction };
+const sortProductsAction = (orderBy) => async (dispatch) => {
+    try {
+        spinnerStatusAction(true);
+        dispatch({ type: PRODUCT_LIST_REQUEST });
+        const { data } = await axios.get(`${BaseUrl}/api/products/sort?orderBy=${orderBy}`);
+        dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
+        spinnerStatusAction(false);
+
+    } catch (error) {
+        dispatch({ type: PRODUCT_LIST_ERROR, payload: errorMessageHandler(error) })
+        spinnerStatusAction(true);
+        notificationError(errorMessageHandler(error));
+        spinnerStatusAction(false);
+    }
+
+}
+
+export { productListAction, sortProductsAction };
