@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import { productListAction } from '../redux/actions/productAction';
+import { Link } from 'react-router-dom';
 
 const NavigationBar = (props) => {
 
@@ -17,6 +18,9 @@ const NavigationBar = (props) => {
 
   const productList = useSelector(state => state.productList);
   const { products } = productList;
+
+  const cart = useSelector(state => state.cart);
+  const { cartItems } = cart;
 
   const dispatch = useDispatch();
 
@@ -87,6 +91,14 @@ const NavigationBar = (props) => {
 
                   </InputGroup>
                 </Form>
+
+                <div className="mr-4">
+                  <Link to={'/cart'}>
+                    <FontAwesomeIcon icon={faCartPlus} className="font-icon" />
+                    <span className="counter">{cartItems.length > 0 && cartItems.reduce((a, b) => a + Number(b.qty), 0)}</span>
+                  </Link>
+
+                  </div>
 
               </Navbar.Collapse>
             </Container>

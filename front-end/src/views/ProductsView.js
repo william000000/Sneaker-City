@@ -5,13 +5,11 @@ import { Row, Col, Container, Form } from 'react-bootstrap';
 import { Product } from '../components/Product';
 import Spinner from '../components/Spinner';
 import Pagination from "react-js-pagination";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSort } from '@fortawesome/free-solid-svg-icons';
 
 export const ProductView = () => {
 
     const productList = useSelector(state => state.productList);
-    const { loading, error, products } = productList;
+    const { loading, products } = productList;
 
     const dispatch = useDispatch();
 
@@ -25,14 +23,10 @@ export const ProductView = () => {
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
 
-    const handlePageChange = (pageNumber) => {
-        console.log(`active page is ${pageNumber}`);
-        setCurrentPage(pageNumber)
-    };
+    const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
 
-    const handleSort = (orderBy) => {
-        dispatch(sortProductsAction(orderBy))
-    };
+    const handleSort = (orderBy) => dispatch(sortProductsAction(orderBy));
+
 
     useEffect(() => {
         dispatch(productListAction());
@@ -41,36 +35,36 @@ export const ProductView = () => {
     return loading ? <Spinner /> :
         <>
             <h2 className="title-spacing">Welcome to Best Sneaker Shop</h2>
-            {/* <FontAwesomeIcon icon={faSort} className="border-2" > */}
-                <Form.Control
-                    as="select"
-                    className="my-1 mr-sm-2"
-                    custom
-                    onChange={(e) => handleSort(e.target.value)}
-                    >
-                    <option>Sort By</option>
-                    <option value="asc">Ascending</option>
-                    <option value="desc">Descending</option>
-                    
-                </Form.Control>
-            {/* </FontAwesomeIcon> */}
-            <Container>
-                <Row className="gutter">
+            <Form.Control
+                as="select"
+                className="my-4"
+                custom
+                onChange={(e) => handleSort(e.target.value)}
+                >
+                <option>Sort By</option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+                
+            </Form.Control>
+
+            <Container className="">
+                <Row className="gutter d-flex justify-content-center">
                     {currentProducts.map(product => (
                         <Col className="col-12 col-md-6 col-lg-4 mb-4" key={product.id}>
-                            <Product product={product}  />
+                            <Product product={product} />
                         </Col>
                     ))}
 
-                    <div className="pagination">
+                    <div className="pagination-container w-100 d-flex justify-content-center">
                         <Pagination
                             activePage={activePage}
-                            itemsCountPerPage={10}
+                            itemsCountPerPage={productsPerPage}
                             totalItemsCount={products.length}
                             pageRangeDisplayed={2}
                             onChange={handlePageChange}
                         />
                     </div>
+
                 </Row>
             </Container>
 

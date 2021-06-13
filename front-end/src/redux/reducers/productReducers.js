@@ -2,7 +2,6 @@ import {
     PRODUCT_LIST_REQUEST,
     PRODUCT_LIST_SUCCESS,
     PRODUCT_LIST_ERROR,
-    UPDATE_SPINNER_STATUS,
    
   } from '../actionTypes/productActionTypes';
   
@@ -24,11 +23,7 @@ import {
           loading: false,
           error: action.payload,
         };
-      case UPDATE_SPINNER_STATUS:
-        return {
-          ...state,
-          spinnerStatus: action.payload,
-        }
+
       default:
         return state;
     }

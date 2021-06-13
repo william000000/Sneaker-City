@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
-import defaultProduct from '../static/products/sneaker_3.jpeg'
+import defaultProduct from '../static/products/sneaker_3.jpeg';
+import { useDispatch } from 'react-redux';
+import { addToCartActions } from '../redux/actions/cartActions';
 
 export const Product = (props) => {
     const { product, className, isSpecificProd } = props;
     const [size, setSize] = useState('');
-    const handleAddToCart = () => {
+    const [qty, setQty] = useState(1);
 
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (productId, qty, size) => {
+        dispatch(addToCartActions(productId, qty, size));
     }
    
     return (
@@ -20,22 +26,24 @@ export const Product = (props) => {
                 </div>
 
                 <div className="product-details d-flex justify-content-center flex-column">
-                    <span className="text-black">Brand: {product.brandName}</span>
-                    <span className="text-black">Model: {product.model}</span>
-                    <span className="text-black">Price: {product.price} rwf</span>
-                    <span className="text-black">In Stock: {product.countInStock}</span>
-                    <span className="text-black">Release Date: {product.releaseDate}</span>
+                    <span className="text-black">Brand: <strong>{product.brandName}</strong></span>
+                    <span className="text-black">Model: <strong>{product.model}</strong></span>
+                    <span className="text-black">Price: <strong>{product.price} Frw</strong></span>
+                    {isSpecificProd && <span className="text-black">In Stock: <strong>{product.countInStock}</strong></span>}
+                    <span className="text-black">Release Date: <strong>{product.releaseDate}</strong></span>
                     {isSpecificProd && 
                         <>
                             <span>
                                 <Form.Group controlId="size" >
+                                    <Form.Label>Size: </Form.Label>
                                     <Form.Control
                                         as="select"
                                         className="my-1 mr-sm-2"
                                         custom
                                         onChange={(e) => setSize(e.target.value)}
+                                        required={true}
                                         >
-                                        <option value="all">Select your size</option>
+                                        <option>Select your size</option>
                                         {product && product.availableSizes.map((item, index) => (
                                             <option key={index} value={item}>{item}</option>
                                         ))}
@@ -50,7 +58,7 @@ export const Product = (props) => {
                                         as="select"
                                         className="my-1 mr-sm-2"
                                         custom
-                                        onChange={(e) => setSize(e.target.value)}
+                                        onChange={(e) => setQty(e.target.value)}
                                         >
                                         {[...Array(product.countInStock).keys()].map((x) => (
                                             <option key={x + 1} value={x + 1}>
@@ -60,12 +68,14 @@ export const Product = (props) => {
                                     </Form.Control>
                                 </Form.Group>
                             </span>
+
+                            <div className="d-flex justify-content-center">
+                                <Button onClick={() => handleAddToCart(product.id, qty, size)} className="add-to-cart-btn mt-1" >Add To Cart</Button>
+                            </div>
                         </>
                     }
                 
-                    <div className="d-flex justify-content-center">
-                        <Button onClick={() => handleAddToCart(product.id)} className="add-to-cart-btn mt-1" >Add To Cart</Button>
-                    </div>
+                
                    
                 </div>
             </div>
