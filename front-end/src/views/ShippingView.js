@@ -17,15 +17,15 @@ export const ShippingView = (props) => {
     const dispatch = useDispatch();
   
     const submitHandler = (e) => {
-      e.preventDefault();
-      dispatch(saveShippingAddress({ name, address, city, phoneNumber }));
-
+        e.preventDefault();
+        dispatch(saveShippingAddress({ name, address, city, phoneNumber }));
+        props.history.push('/payments?price={}');
     };
 
     return (
       <>
         <Container className="">
-          <Form onSubmit={submitHandler} className="form rounded">
+          <Form onSubmit={submitHandler} className="form rounded px-4">
             <h2 className="text-center">Shipping</h2>
   
             <Form.Group className="mb-2" controlId="fullName" >
@@ -52,8 +52,7 @@ export const ShippingView = (props) => {
             <Button variant="secondary" size="sm" type="submit" className="font-weight-bold w-100">
               Continue
               </Button>
-  
-  
+
           </Form>
         </Container>
       </>

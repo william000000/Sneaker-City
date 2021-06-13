@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import { SingleProductView } from './views/SingleProduct';
 import { CartView } from './views/Cart';
 import { ShippingView } from './views/ShippingView';
+import { PaymentView } from './views/Payment';
 
 
 function App() {
@@ -15,10 +16,12 @@ function App() {
       <Router>
         <NavWithRouter />
         <Switch>
+          <Route path='/' exact component={ProductView} />
           <Route path='/products' exact component={ProductView} />
           <Route path='/products/:id?' component={SingleProductView} />
           <Route path='/cart/:id?' component={CartView} />
           <Route path='/shipping' component={ShippingView} />
+          <Route path='/payments' component={PaymentView} />
         </Switch>
 
         <ToastContainer position="bottom-center"
