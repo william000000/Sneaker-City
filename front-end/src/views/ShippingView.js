@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import { Footer } from '../components/Footer';
 import { saveShippingAddress } from '../redux/actions/cartActions';
 
 export const ShippingView = (props) => {
@@ -55,6 +56,7 @@ export const ShippingView = (props) => {
 
           </Form>
         </Container>
+        <Footer />
       </>
     );
   }

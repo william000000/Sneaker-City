@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
   Nav, Navbar, Container, Form, InputGroup
 } from 'react-bootstrap';
-import logo from './../sneaker_logo.jpeg';
+import logo from '../assets/sneaker_logo.jpeg';
 import { withRouter, Redirect } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -25,7 +25,6 @@ const NavigationBar = (props) => {
   const dispatch = useDispatch();
 
   const handleOnSearch = (string, results) => setIsSelected(false);
-
 
   const handleOnHover = (result) => { }
 

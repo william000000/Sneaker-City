@@ -24,7 +24,7 @@ export const Product = (props) => {
                     </Link>
                 </div>
 
-                <div className="product-details d-flex justify-content-center flex-column">
+                <div className="product-details d-flex justify-content-center text-left flex-column">
                     <span className="text-black-50">Brand: <strong>{product.brandName}</strong></span>
                     <span className="text-black-50">Model: <strong>{product.model}</strong></span>
                     <span className="text-black-50">Price: <strong>{product.price} Frw</strong></span>

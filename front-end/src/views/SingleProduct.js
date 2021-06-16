@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { productListAction } from '../redux/actions/productAction';
 import { Container } from 'react-bootstrap';
 import { Product } from '../components/Product';
+import { Footer } from '../components/Footer';
 
 
 export const SingleProductView = (props) => {
@@ -24,7 +25,7 @@ export const SingleProductView = (props) => {
             <Container className="d-flex justify-content-center mb-4">
                 <Product product={products.length > 0 && products[0]} isSpecificProd={true} className="specific-product" />   
             </Container>
-
+            <Footer />
         </>
     )
 }

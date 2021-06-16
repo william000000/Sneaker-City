@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { addToCartActions, removeFromCart } from '../redux/actions/cartActions';
+import { Footer } from '../components/Footer';
 
 export const CartView = (props) => {
   
@@ -21,12 +22,13 @@ export const CartView = (props) => {
 
     return (
         <>
-            <h2 className="title-spacing">Your Cart</h2>
-            <Container className="cart">   
+          
+            <Container className="cart">  
+                <h2 className="title-spacing">Your Cart</h2> 
                 <ul className="p-0">
                     {cartItems.length === 0 && <div>Your cart is empty</div>}
                     { cartItems.map(item => (
-                        <li key={item.id} className="list-unstyled mb-2 border">
+                        <li key={item.id} className="list-unstyled mb-2 border rounded px-2">
                             <div className="d-flex justify-content-between align-items-center text-center flex-wrap">
                                 <div className="img-container">
                                     <img
@@ -62,9 +64,9 @@ export const CartView = (props) => {
                                 <div className="">{item.price} Rwf</div>
 
                                 <div className="">
-                                    <button type="button" onClick={() => removeFromCartHandler(item.id)} className="rounded" >
+                                    <Button type="button" variant="outline-secondary" onClick={() => removeFromCartHandler(item.id)} className="rounded" >
                                         Remove
-                                    </button>
+                                    </Button>
                                 </div>
 
                             </div>
@@ -72,8 +74,8 @@ export const CartView = (props) => {
                     ))}
                 </ul> 
 
-                <div className="col mt-4">
-                    <div className="mt-4 summary-price-box">
+                <div className="card border-0 mb-4">
+                    <div className="mt-4 summary-price-box rounded">
                         <h4 className="subtotal mb-4">
                             Total of {cartItems.reduce((a, b) => a + Number(b.qty), 0)} items : {cartItems.reduce((a, c) => a + c.price * c.qty, 0)} RWF
                         </h4>
@@ -81,6 +83,7 @@ export const CartView = (props) => {
                     </div>
                 </div>
             </Container>
+            <Footer />
 
         </>
     )

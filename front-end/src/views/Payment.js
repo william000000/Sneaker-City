@@ -16,7 +16,7 @@ export const PaymentView = (props) => {
     }, [redirectedUrl])
     
     return (
-        <Container className="payment-container">
+        <Container className="payment-container rounded">
             { redirectedUrl === 'successful' ? <strong className="text-success">Thank you to buy from us! Your sneaker will reach you in a minutes.</strong>: 
                 <>
                     <h2 className="my-4">Pay Your Order</h2>

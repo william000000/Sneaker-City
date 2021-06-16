@@ -5,6 +5,7 @@ import { Row, Col, Container, Form } from 'react-bootstrap';
 import { Product } from '../components/Product';
 import Spinner from '../components/Spinner';
 import Pagination from "react-js-pagination";
+import { Footer } from '../components/Footer';
 
 export const ProductView = () => {
 
@@ -68,5 +69,6 @@ export const ProductView = () => {
                 </Row>
             </Container>
 
+            <Footer />
         </>
 }
