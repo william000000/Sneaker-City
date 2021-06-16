@@ -37,7 +37,7 @@ export const ProductView = () => {
             <h2 className="title-spacing">Welcome to Best Sneaker Shop</h2>
             <Form.Control
                 as="select"
-                className="my-4"
+                className="rounded my-4 sort-select"
                 custom
                 onChange={(e) => handleSort(e.target.value)}
                 >

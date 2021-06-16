@@ -14,11 +14,16 @@ export const PaymentView = (props) => {
             return notificationSuccess('You have succcesfully paid your sneak! Thank you..')
         }
     }, [redirectedUrl])
+    
     return (
-        <Container className="my-4">
-            { redirectedUrl === 'successful' ? <strong className="mt-4 text-success">Thank you to buy from us! Your sneaker will reach you in a minutes.</strong>: 
+        <Container className="payment-container">
+            { redirectedUrl === 'successful' ? <strong className="text-success">Thank you to buy from us! Your sneaker will reach you in a minutes.</strong>: 
                 <>
                     <h2 className="my-4">Pay Your Order</h2>
+
+                    <h4 className="subtotal mb-4">
+                            The total of {cartItems.reduce((a, b) => a + Number(b.qty), 0)} items : {cartItems.reduce((a, c) => a + c.price * c.qty, 0)} RWF
+                    </h4>
                     <p>Click the button below to pay</p>
 
                     <Form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
@@ -33,7 +38,7 @@ export const PaymentView = (props) => {
                         <input type="hidden" name="meta[token]" value="54" />
                         <input type="hidden" name="redirect_url" value={frontEndRedirectUrl} />
                         
-                        <Button type="submit" variant="success">CHECKOUT</Button> 
+                        <Button type="submit" variant="success">Pay Now</Button> 
                     </Form>
                 </>
             }

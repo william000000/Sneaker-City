@@ -24,6 +24,7 @@ const addToCartActions = (productId, qty, size) => async (dispatch, getState) =>
                 model: data[0].model,
                 brandName: data[0].brandName,
                 price: data[0].price,
+                image: data[0].image,
                 countInStock: data[0].countInStock,
                 releaseDate: data[0].releaseDate,
                 qty,
@@ -32,7 +33,7 @@ const addToCartActions = (productId, qty, size) => async (dispatch, getState) =>
         })
         localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
         spinnerStatusAction(false);
-        notificationSuccess("It has been added on your cart!");
+        notificationSuccess("It has been added on your cart, Click on the cart icon at the top nav to see your cart!");
 
     } catch (error) {
         spinnerStatusAction(true);

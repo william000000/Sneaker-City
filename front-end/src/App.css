@@ -3,8 +3,8 @@
   text-align: center;
 }
 
-/** Spinner Loader Style **/
 
+/******************** Spinner Loader Style ********************/
 .loader {
   text-align: center;
 }
@@ -21,7 +21,8 @@
   cursor: pointer;
 } 
 
-/** Putting space btn rows **/
+
+/******************** Putting space btn rows ********************/
 .gutter .row {
 		margin-top: -30px;
 }
@@ -31,12 +32,17 @@
 }
 
 
-/** Product Styles **/
+/******************** Product Styles ****************************/
 .product-container {
-  border: 2px solid gray;
+  border: 1px dashed gray;
   border-radius: 15px;
-  max-width: 400px;
+  max-width: 350px;
 }
+
+.product-container:hover {
+  border: 1px solid gray;
+  transition: 0.5s;
+} 
 
 .product-container .img-container {
   width: 100%;
@@ -44,7 +50,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
- 
 }
 
 .product-container select {
@@ -52,12 +57,14 @@
   text-align: center;
 }
 
-.img-container img {  
+.product-container .img-container img {  
   width: 100%;
   max-height: 220px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   height: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 
@@ -83,27 +90,102 @@
 }
 
 .product-details {
-  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  height: 150px;
 }
 
+.product-details span {
+  font-size: 12px;
+}
 
 .title-spacing {
   margin: 50px 0;
 }
 
+.sort-select {
+  font-size: 12px;
+}
 
-/** Navbar design **/
+.specific-product {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
+.specific-product .img-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.specific-product .img-container {
+  width: 40%;
+  border-right: 1px solid gray;
+}
+
+.specific-product .product-details {
+  width: 60%;
+  height: 400px;
+}
+
+.specific-product span {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 767px) {  
+  .specific-product {
+    display: flex;
+    flex-direction: column;
+  }    
+  .specific-product .img-container {
+      width: 100%;
+      border-right: none;
+  }
+}
+
+/******************** Navbar design ***************************/
 .main-nav {
   box-shadow: 0 2px 5px rgb(0 0 0 / 29%);
   position: sticky;
   top: 0;
 }
 .main-nav .logo {
-  width: 100px;
-  height: 60px;
+  width: 120px;
+  height: 70px;
   object-fit: cover;
   object-position: center;
+}
+.main-nav .nav-link {
+  font-weight: 700;
+  color: black !important;
+}
+
+.cart-nav-icon-container a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+
+.cart-nav-icon-container a span {
+  position: absolute;
+  top: -10px;
+  right: -15px;
+  background-color: gray;
+  color: white;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 11px;
+}
+
+.cart-nav-icon-container  a:hover span {
+  background-color: black;
+  color: white;
 }
 
 .search-container {
@@ -130,8 +212,8 @@
 }
 
 
-/** Cart Style **/
 
+/******************** Cart Style ************************/
 .img-container .cart-img {  
   width: 200px;
   height: 200px;
@@ -140,12 +222,14 @@
   height: 100%;
 }
 
-/** Pagination style**/ 
 
+
+/************************* Pagination style *************************/ 
 .pagination {
   display: flex;
   margin: 30px 0;
 }
+
 .pagination a {
   position: relative;
   display: block;
@@ -153,4 +237,73 @@
   margin-left: -2px;
   color: black;
   border: 2px solid gray;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pagination a:hover {
+  transition: 0.5s;
+  background-color: rgb(224, 224, 224);
+}
+
+
+/************************** Form Styles ********************/
+.shipping-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 100px;
+}
+
+.form {
+  width: 45%;
+  border: 1px solid gray;
+  padding: 50px;
+  background-color: white;
+  left: 0;
+  right: 0;
+}
+
+.form label {
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 767px) { 
+  .form {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/******************** Add To Cart and Checkout ********************/
+
+.summary-price-box {
+  border: 1px solid gray;
+  padding: 50px;
+  width: 400px;
+  float: right;
+}
+
+.payment-container {
+  border: 1px solid gray;
+  padding: 50px;
+  margin-top: 100px;
+  width: 400px;
+}
+
+@media only screen and (max-width: 767px) { 
+  .summary-price-box,  .payment-container {
+    width: 100%;
+  }
+  .cart ul li {
+    width: 100%;
+  }
+  .cart .cart-img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

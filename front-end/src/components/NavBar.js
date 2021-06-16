@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
   Nav, Navbar, Container, Form, InputGroup
 } from 'react-bootstrap';
-import logo from '../static/sneaker_logo.jpeg';
+import logo from './../sneaker_logo.jpeg';
 import { withRouter, Redirect } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,10 +24,8 @@ const NavigationBar = (props) => {
 
   const dispatch = useDispatch();
 
-  const handleOnSearch = (string, results) => {
-    console.log('handle on search-----', string, results);
-    setIsSelected(false);
-  }
+  const handleOnSearch = (string, results) => setIsSelected(false);
+
 
   const handleOnHover = (result) => { }
 
@@ -92,13 +90,12 @@ const NavigationBar = (props) => {
                   </InputGroup>
                 </Form>
 
-                <div className="mr-4">
+                <div className="mr-4 cart-nav-icon-container">
                   <Link to={'/cart'}>
                     <FontAwesomeIcon icon={faCartPlus} className="font-icon" />
                     <span className="counter">{cartItems.length > 0 && cartItems.reduce((a, b) => a + Number(b.qty), 0)}</span>
                   </Link>
-
-                  </div>
+                </div>
 
               </Navbar.Collapse>
             </Container>

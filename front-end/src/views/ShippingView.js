@@ -24,7 +24,7 @@ export const ShippingView = (props) => {
 
     return (
       <>
-        <Container className="">
+        <Container className="shipping-container">
           <Form onSubmit={submitHandler} className="form rounded px-4">
             <h2 className="text-center">Shipping</h2>
   
@@ -49,7 +49,7 @@ export const ShippingView = (props) => {
             </Form.Group>
   
   
-            <Button variant="secondary" size="sm" type="submit" className="font-weight-bold w-100">
+            <Button variant="secondary" type="submit" className="font-weight-bold mt-2 w-100">
               Continue
               </Button>
 

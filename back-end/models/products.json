@@ -7,6 +7,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_1.png",
       "releaseDate": "12/03/2020"
     },
    
@@ -17,6 +18,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_2.jpeg",
       "releaseDate": "12/05/2020"
     },
    
@@ -27,6 +29,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_3.jpeg",
       "releaseDate": "11/03/2020"
     },
    
@@ -37,6 +40,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_2.jpeg",
       "releaseDate": "12/03/1990"
     },
     {
@@ -46,6 +50,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_1.png",
       "releaseDate": "14/06/2020"
     },
     {
@@ -55,6 +60,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_3.jpeg",
       "releaseDate": "12/03/2000"
     },
     {
@@ -64,6 +70,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_2.jpeg",
       "releaseDate": "12/04/2020"
     },
     {
@@ -73,6 +80,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_1.png",
       "releaseDate": "10/03/2020"
     },
     {
@@ -82,6 +90,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_2.jpeg",
       "releaseDate": "12/03/2021"
     },
     {
@@ -91,6 +100,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_3.jpeg",
       "releaseDate": "01/03/2020"
     },
     {
@@ -100,6 +110,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_1.png",
       "releaseDate": "12/04/2020"
     },
     {
@@ -109,6 +120,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_1.png",
       "releaseDate": "12/03/2023"
     },
     {
@@ -118,6 +130,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 100,
       "countInStock": 12,
+      "image": "/products/sneaker_3.jpeg",
       "releaseDate": "12/03/2020"
     },
     {
@@ -127,6 +140,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 300,
       "countInStock": 12,
+      "image": "/products/sneaker_1.png",
       "releaseDate": "12/11/2020"
     },
     {
@@ -136,6 +150,7 @@
       "availableSizes": [32, 40, 70, 2],
       "price": 400,
       "countInStock": 12,
+      "image": "/products/sneaker_2.jpeg",
       "releaseDate": "01/01/2022"
     }
   ]

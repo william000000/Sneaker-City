@@ -22,7 +22,7 @@ class ProductController {
             return res.status(200).send(productResult);
         } else {
             const singleProduct = productResult.filter(prod => Number.parseInt(prod.id) === Number.parseInt(id));
-            if (!singleProduct) {
+            if (singleProduct.length <= 0) {
                 return res.status(404).send({ error: "The Product not found!" });
             }
             return res.status(200).send(singleProduct);

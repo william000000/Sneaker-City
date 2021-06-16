@@ -22,7 +22,7 @@ export const SingleProductView = (props) => {
         <>
             <h2 className="title-spacing">Your Sneaker</h2>
             <Container className="d-flex justify-content-center mb-4">
-                <Product product={products.length > 0 && products[0]} isSpecificProd={true} />   
+                <Product product={products.length > 0 && products[0]} isSpecificProd={true} className="specific-product" />   
             </Container>
 
         </>

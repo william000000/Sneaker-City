@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
-import defaultProduct from '../static/products/sneaker_3.jpeg';
 import { useDispatch } from 'react-redux';
 import { addToCartActions } from '../redux/actions/cartActions';
 
@@ -21,24 +20,24 @@ export const Product = (props) => {
             <div className={className ? className : "bg-light product-container text-center"}>
                 <div className="img-container">
                     <Link to={`/products/` + product.id} >
-                        <img src={product.image || defaultProduct} alt="product" />
+                        <img src={`/static${product.image}`} alt="product" />
                     </Link>
                 </div>
 
                 <div className="product-details d-flex justify-content-center flex-column">
-                    <span className="text-black">Brand: <strong>{product.brandName}</strong></span>
-                    <span className="text-black">Model: <strong>{product.model}</strong></span>
-                    <span className="text-black">Price: <strong>{product.price} Frw</strong></span>
-                    {isSpecificProd && <span className="text-black">In Stock: <strong>{product.countInStock}</strong></span>}
-                    <span className="text-black">Release Date: <strong>{product.releaseDate}</strong></span>
+                    <span className="text-black-50">Brand: <strong>{product.brandName}</strong></span>
+                    <span className="text-black-50">Model: <strong>{product.model}</strong></span>
+                    <span className="text-black-50">Price: <strong>{product.price} Frw</strong></span>
+                    {isSpecificProd && <span className="text-black-50">In Stock: <strong>{product.countInStock}</strong></span>}
+                    <span className="text-black-50">Release Date: <strong>{product.releaseDate}</strong></span>
                     {isSpecificProd && 
                         <>
                             <span>
                                 <Form.Group controlId="size" >
-                                    <Form.Label>Size: </Form.Label>
+                                    <Form.Label className="text-black-50 mr-4">Size: </Form.Label>
                                     <Form.Control
                                         as="select"
-                                        className="my-1 mr-sm-2"
+                                        className="my-1 mr-sm-2 rounded"
                                         custom
                                         onChange={(e) => setSize(e.target.value)}
                                         required={true}
@@ -53,10 +52,10 @@ export const Product = (props) => {
                         
                             <span>
                                 <Form.Group controlId="countInStock" >
-                                    <Form.Label>Qty: </Form.Label>
+                                    <Form.Label className="text-black-50">Qty: </Form.Label>
                                     <Form.Control
                                         as="select"
-                                        className="my-1 mr-sm-2"
+                                        className="ml-2 rounded"
                                         custom
                                         onChange={(e) => setQty(e.target.value)}
                                         >
@@ -70,7 +69,7 @@ export const Product = (props) => {
                             </span>
 
                             <div className="d-flex justify-content-center">
-                                <Button onClick={() => handleAddToCart(product.id, qty, size)} className="add-to-cart-btn mt-1" >Add To Cart</Button>
+                                <Button onClick={() => handleAddToCart(product.id, qty, size)} className="add-to-cart-btn mt-1 w-100" >Add To Cart</Button>
                             </div>
                         </>
                     }
