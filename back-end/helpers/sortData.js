@@ -1,4 +1,4 @@
-/** This function can sort data by date of this format 'dd/MM/YYYY' **/
+/** This function can sort data by date with this format 'dd/MM/YYYY' **/
 
 const sortData = (array, order) => {
     let productResult = array;

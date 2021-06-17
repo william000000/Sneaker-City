@@ -34,12 +34,12 @@ describe('Welcome to Sneaker City', () => {
       });
   });
 
-  it('should display error when a route does not exist', (done) => {
+  it('should display error when a route does not exists', (done) => {
     chai.request(app)
       .get('/mfdskfg')
       .end((err, res) => {
         res.should.have.status(404);
-        expect(res.body.message).eql('Ooops the route you are looking for, It does not exist!')
+        expect(res.body.message).eql('Ooops the route you are looking for, It does not exists!')
         done();
       });
   });
@@ -72,12 +72,12 @@ describe('Product Tests', () => {
             .get("/api/products?id=40003")
             .end((req, res) => {
                 res.should.have.status(404);
-                expect(res.body.error).eql("The Product not found!")
+                expect(res.body.error).eql("The Product is not found!")
                 done();
             });
     });
 
-    it("Should sort your product by asc", (done) => {
+    it("Should sort your products by ascending order", (done) => {
         chai.request(app)
             .get("/api/products/sort?orderBy=asc")
             .end((req, res) => {
@@ -86,4 +86,5 @@ describe('Product Tests', () => {
                 done();
             });
     });
+    
 })

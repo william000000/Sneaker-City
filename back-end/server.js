@@ -1,14 +1,9 @@
 const express = require('express');
-const cors = require('cors');
 const router = require('./routers/index');
 
 const app = express();
 const serverPort = 9001;
 
-app.use(cors());
-
-app.use(express.static(__dirname + '/front-end/static'));
-app.use("/front-end/static/products", express.static('/front-end/static/products'));
 
 app.use("/api", router);
 
@@ -17,7 +12,7 @@ app.get('/', function (req, res) {
 });
 
 app.use('*', (req, res) => res.status(404).send({
-    message: 'Ooops the route you are looking for, It does not exist!'
+    message: 'Ooops the route you are looking for, It does not exists!'
   }));
 
 app.listen(serverPort);
