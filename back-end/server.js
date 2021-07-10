@@ -1,10 +1,11 @@
 const express = require('express');
 const router = require('./routers/index');
+const cors = require('cors');
 
 const app = express();
 const serverPort = 9001;
 
-
+app.use(cors())
 app.use("/api", router);
 
 app.get('/', function (req, res) {
